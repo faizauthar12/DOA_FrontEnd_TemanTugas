@@ -40,6 +40,7 @@ ext {
     mockitoKotlinVersion = '2.2.0'
     idleResourceVersion = '3.4.0'
     botNavVersion = '2.3.5'
+    legacyVersion = '1.0.0'
 
     materialVersion = '1.4.0'
     recyclerViewVersion = '1.2.1'
