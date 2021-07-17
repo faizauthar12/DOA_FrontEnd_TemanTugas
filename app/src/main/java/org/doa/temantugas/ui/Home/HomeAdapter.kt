@@ -39,7 +39,8 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
                 tvCourseTitle.text = course.courseTitle
                 tvCourseTeacher.text = course.courseTeacher
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context,CourseDetailActivity::class.java)
+                    val intent = Intent(itemView.context, CourseDetailActivity::class.java)
+                    intent.putExtra(CourseDetailActivity.EXTRA_COURSE_TITLE, course.courseTitle)
                     itemView.context.startActivity(intent)
                 }
             }
