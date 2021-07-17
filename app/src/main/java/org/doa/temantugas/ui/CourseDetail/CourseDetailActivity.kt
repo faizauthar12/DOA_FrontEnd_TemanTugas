@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import org.doa.temantugas.databinding.ActivityCourseDetailBinding
 
 class CourseDetailActivity : AppCompatActivity() {
+    companion object {
+        const val EXTRA_COURSE_TITLE = "extra_course_title"
+    }
+
     private lateinit var binding: ActivityCourseDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +19,11 @@ class CourseDetailActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbarCourseDetail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        if (intent.extras != null) {
+            val courseTitle = intent.extras!!.getString(EXTRA_COURSE_TITLE)
+            supportActionBar?.title = courseTitle
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
