@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import org.doa.temantugas.databinding.FragmentTugasBinding
+import org.doa.temantugas.ui.Home.HomeAdapter
+import org.doa.temantugas.ui.Home.HomeViewModel
 
 class TugasFragment : Fragment() {
     private lateinit var binding: FragmentTugasBinding
@@ -17,5 +21,26 @@ class TugasFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentTugasBinding.inflate(layoutInflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (activity != null) {
+            val viewModel = ViewModelProvider(
+                this,
+                ViewModelProvider.NewInstanceFactory()
+            )[TugasViewModel::class.java]
+            val assignments = viewModel.getAssignments()
+
+            val tugasAdapter = TugasAdapter()
+            tugasAdapter.setAssignment(assignments)
+
+            with(binding.rvAssignment) {
+                layoutManager = LinearLayoutManager(context)
+                setHasFixedSize(true)
+                adapter = tugasAdapter
+            }
+        }
     }
 }
