@@ -19,6 +19,7 @@ class CourseDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupBottomNavigation()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setupBottomNavigation() {
@@ -30,5 +31,10 @@ class CourseDetailActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
