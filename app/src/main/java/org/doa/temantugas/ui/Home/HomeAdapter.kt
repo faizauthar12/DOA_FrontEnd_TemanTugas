@@ -1,10 +1,12 @@
 package org.doa.temantugas.ui.Home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.doa.temantugas.data.source.local.entity.CourseEntity
 import org.doa.temantugas.databinding.ItemsCourseBinding
+import org.doa.temantugas.ui.CourseDetail.CourseDetailActivity
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
@@ -36,6 +38,10 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
             with(binding) {
                 tvCourseTitle.text = course.courseTitle
                 tvCourseTeacher.text = course.courseTeacher
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context,CourseDetailActivity::class.java)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }
