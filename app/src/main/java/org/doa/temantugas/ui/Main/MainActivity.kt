@@ -11,19 +11,21 @@ import org.doa.temantugas.R
 import org.doa.temantugas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(activityMainBinding.root)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setupBottomNavigation(activityMainBinding)
+        setupBottomNavigation()
 
         supportActionBar?.hide()
     }
 
-    private fun setupBottomNavigation(activityMainBinding: ActivityMainBinding) {
-        val navView: BottomNavigationView = activityMainBinding.bottomNavigationView
+    private fun setupBottomNavigation() {
+        val navView: BottomNavigationView = binding.bottomNavigationView
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
