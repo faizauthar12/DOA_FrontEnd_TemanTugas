@@ -28,13 +28,16 @@ class HomeFragment : Fragment() {
             val searchView = binding.searchView
             searchView.isIconifiedByDefault = false
 
-            val viewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory())[HomeViewModel::class.java]
+            val viewModel = ViewModelProvider(
+                this,
+                ViewModelProvider.NewInstanceFactory()
+            )[HomeViewModel::class.java]
             val courses = viewModel.getCourses()
 
             val homeAdapter = HomeAdapter()
             homeAdapter.setCourses(courses)
 
-            with(binding.rvCourse){
+            with(binding.rvCourse) {
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
                 adapter = homeAdapter
