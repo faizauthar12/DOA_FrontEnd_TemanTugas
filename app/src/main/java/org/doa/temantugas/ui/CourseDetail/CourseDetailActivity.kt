@@ -9,6 +9,10 @@ import org.doa.temantugas.R
 import org.doa.temantugas.databinding.ActivityCourseDetailBinding
 
 class CourseDetailActivity : AppCompatActivity() {
+    companion object {
+        const val EXTRA_COURSE_TITLE = "extra_course_title"
+    }
+
     private lateinit var binding: ActivityCourseDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +23,11 @@ class CourseDetailActivity : AppCompatActivity() {
 
         setupBottomNavigation()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        if (intent.extras != null) {
+            val courseTitle = intent.extras!!.getString(EXTRA_COURSE_TITLE)
+            supportActionBar?.title = courseTitle
+        }
     }
 
     private fun setupBottomNavigation() {
