@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavigation() {
-        val navView: BottomNavigationView = binding.bottomNavigationView
+        val navView: BottomNavigationView = binding.bottomNavigationViewMain
 
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerViewMain) as NavHostFragment
         val navController = navHostFragment.navController
 
         setupActionBarWithNavController(navController)
