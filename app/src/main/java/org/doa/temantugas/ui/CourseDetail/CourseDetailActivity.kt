@@ -3,7 +3,6 @@ package org.doa.temantugas.ui.CourseDetail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.doa.temantugas.R
@@ -29,7 +28,6 @@ class CourseDetailActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerViewCourseDetail) as NavHostFragment
         val navController = navHostFragment.navController
 
-        setupActionBarWithNavController(navController)
         navView.setupWithNavController(navController)
     }
 
