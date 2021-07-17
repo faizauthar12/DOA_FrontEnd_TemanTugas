@@ -1,5 +1,6 @@
 package org.doa.temantugas.utils
 
+import org.doa.temantugas.data.source.local.entity.AssignmentEntity
 import org.doa.temantugas.data.source.local.entity.CourseEntity
 
 object CourseDummy {
@@ -47,5 +48,56 @@ object CourseDummy {
         )
 
         return courses
+    }
+
+    fun generateAssignmentDummy(): List<AssignmentEntity> {
+        val assignments = ArrayList<AssignmentEntity>()
+
+        assignments.add(
+            AssignmentEntity(
+                "Course1a1",
+                "Course1",
+                "Tugas 1",
+                "25/07/2021"
+            )
+        )
+
+        assignments.add(
+            AssignmentEntity(
+                "Course1a2",
+                "Course1",
+                "Tugas 2",
+                "26/07/2021"
+            )
+        )
+
+        assignments.add(
+            AssignmentEntity(
+                "Course1a3",
+                "Course1",
+                "Tugas 3",
+                "27/07/2021"
+            )
+        )
+
+        assignments.add(
+            AssignmentEntity(
+                "Course1a4",
+                "Course1",
+                "Tugas 4",
+                "28/07/2021"
+            )
+        )
+
+        assignments.add(
+            AssignmentEntity(
+                "Course1a5",
+                "Course1",
+                "Tugas 5",
+                "29/07/2021"
+            )
+        )
+        
+        return assignments
     }
 }
