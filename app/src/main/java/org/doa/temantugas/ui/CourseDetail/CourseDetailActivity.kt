@@ -2,6 +2,7 @@ package org.doa.temantugas.ui.CourseDetail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -15,6 +16,7 @@ class CourseDetailActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityCourseDetailBinding
+    private lateinit var courseId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +28,17 @@ class CourseDetailActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarCourseDetail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        val viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.NewInstanceFactory()
+        )[CourseDetailViewModel::class.java]
+
         if (intent.extras != null) {
             val courseTitle = intent.extras!!.getString(EXTRA_COURSE_TITLE)
             supportActionBar?.title = courseTitle
+
+            courseId = intent.extras!!.getString(EXTRA_COURSE_ID).toString()
+            viewModel.setCourseId(courseId!!)
         }
     }
 
