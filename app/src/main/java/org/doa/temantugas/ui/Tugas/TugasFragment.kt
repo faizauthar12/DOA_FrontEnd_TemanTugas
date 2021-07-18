@@ -1,15 +1,14 @@
 package org.doa.temantugas.ui.Tugas
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.doa.temantugas.databinding.FragmentTugasBinding
-import org.doa.temantugas.ui.Home.HomeAdapter
-import org.doa.temantugas.ui.Home.HomeViewModel
 
 class TugasFragment : Fragment() {
     private lateinit var binding: FragmentTugasBinding
@@ -27,6 +26,9 @@ class TugasFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
+            val courseId = arguments?.getString("courseId")
+            Log.d("TugasFragment", "gotcha!!! ${courseId}")
+
             val viewModel = ViewModelProvider(
                 this,
                 ViewModelProvider.NewInstanceFactory()
