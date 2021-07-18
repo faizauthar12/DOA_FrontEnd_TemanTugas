@@ -1,18 +1,18 @@
 package org.doa.temantugas.ui.Tugas
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.doa.temantugas.databinding.FragmentTugasBinding
-import org.doa.temantugas.ui.Home.HomeAdapter
-import org.doa.temantugas.ui.Home.HomeViewModel
+import org.doa.temantugas.ui.CourseDetail.CourseDetailSharedViewModel
 
 class TugasFragment : Fragment() {
     private lateinit var binding: FragmentTugasBinding
+    private val viewModel: CourseDetailSharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,10 +27,6 @@ class TugasFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
-            val viewModel = ViewModelProvider(
-                this,
-                ViewModelProvider.NewInstanceFactory()
-            )[TugasViewModel::class.java]
             val assignments = viewModel.getAssignments()
 
             val tugasAdapter = TugasAdapter()
