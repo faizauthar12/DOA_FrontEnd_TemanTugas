@@ -1,5 +1,6 @@
 package org.doa.temantugas.utils
 
+import androidx.lifecycle.LiveData
 import org.doa.temantugas.data.source.local.entity.AssignmentEntity
 import org.doa.temantugas.data.source.local.entity.CourseEntity
 
@@ -50,13 +51,13 @@ object CourseDummy {
         return courses
     }
 
-    fun generateAssignmentDummy(): List<AssignmentEntity> {
+    fun generateAssignmentDummy(courseId: LiveData<String>): ArrayList<AssignmentEntity> {
         val assignments = ArrayList<AssignmentEntity>()
 
         assignments.add(
             AssignmentEntity(
-                "Course1a1",
-                "Course1",
+                "{$courseId}a1",
+                courseId,
                 "Tugas 1",
                 "25/07/2021"
             )
@@ -64,8 +65,8 @@ object CourseDummy {
 
         assignments.add(
             AssignmentEntity(
-                "Course1a2",
-                "Course1",
+                "{$courseId}a2",
+                courseId,
                 "Tugas 2",
                 "26/07/2021"
             )
@@ -73,8 +74,8 @@ object CourseDummy {
 
         assignments.add(
             AssignmentEntity(
-                "Course1a3",
-                "Course1",
+                "{$courseId}a3",
+                courseId,
                 "Tugas 3",
                 "27/07/2021"
             )
@@ -82,8 +83,8 @@ object CourseDummy {
 
         assignments.add(
             AssignmentEntity(
-                "Course1a4",
-                "Course1",
+                "{$courseId}a4",
+                courseId,
                 "Tugas 4",
                 "28/07/2021"
             )
@@ -91,13 +92,13 @@ object CourseDummy {
 
         assignments.add(
             AssignmentEntity(
-                "Course1a5",
-                "Course1",
+                "{$courseId}a5",
+                courseId,
                 "Tugas 5",
                 "29/07/2021"
             )
         )
-        
+
         return assignments
     }
 }
