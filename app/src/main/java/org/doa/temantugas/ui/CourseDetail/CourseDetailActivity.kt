@@ -1,7 +1,7 @@
 package org.doa.temantugas.ui.CourseDetail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -22,6 +22,7 @@ class CourseDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupBottomNavigation()
+        setSupportActionBar(binding.toolbarCourseDetail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (intent.extras != null) {
