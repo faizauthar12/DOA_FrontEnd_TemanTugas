@@ -41,6 +41,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, CourseDetailActivity::class.java)
                     intent.putExtra(CourseDetailActivity.EXTRA_COURSE_TITLE, course.courseTitle)
+                    intent.putExtra(CourseDetailActivity.EXTRA_COURSE_ID, course.courseId)
                     itemView.context.startActivity(intent)
                 }
             }
