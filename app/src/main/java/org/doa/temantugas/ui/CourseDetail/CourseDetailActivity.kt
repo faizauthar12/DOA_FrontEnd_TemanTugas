@@ -11,6 +11,7 @@ import org.doa.temantugas.databinding.ActivityCourseDetailBinding
 class CourseDetailActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_COURSE_TITLE = "extra_course_title"
+        const val EXTRA_COURSE_ID = "extra_course_id"
     }
 
     private lateinit var binding: ActivityCourseDetailBinding
