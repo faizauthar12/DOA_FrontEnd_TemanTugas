@@ -7,6 +7,15 @@
     app:layoutDescription="@xml/fragment_home_scene"
     tools:context=".ui.Home.HomeFragment">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="411dp"
+        android:layout_height="218dp"
+        android:background="@drawable/home_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvGreeting"
         android:layout_width="wrap_content"
@@ -14,6 +23,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:text="Halo Faiz,"
+        android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.073"
@@ -26,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Cari Kelas atau Pelajaranmu!"
+        android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
