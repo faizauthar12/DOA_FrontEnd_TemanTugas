@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.Class.ClassFragment">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="411dp"
+        android:layout_height="218dp"
+        android:background="@drawable/home_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvGreeting"
         android:layout_width="wrap_content"
@@ -13,6 +22,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="58dp"
         android:text="Cari Kelas atau\nPelajaranmu!"
+        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
