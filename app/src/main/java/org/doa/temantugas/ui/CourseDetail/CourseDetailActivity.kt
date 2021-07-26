@@ -1,7 +1,7 @@
 package org.doa.temantugas.ui.CourseDetail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import org.doa.temantugas.databinding.ActivityCourseDetailBinding
 
 class CourseDetailActivity : AppCompatActivity() {
@@ -12,5 +12,12 @@ class CourseDetailActivity : AppCompatActivity() {
 
         binding = ActivityCourseDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

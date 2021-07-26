@@ -1,10 +1,12 @@
 package org.doa.temantugas.ui.Class
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.doa.temantugas.data.source.local.entity.CourseEntity
 import org.doa.temantugas.databinding.ItemsCourseBinding
+import org.doa.temantugas.ui.CourseDetail.CourseDetailActivity
 
 class ClassAdapter : RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
 
@@ -29,13 +31,17 @@ class ClassAdapter : RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
     }
 
     override fun getItemCount(): Int = listCourse.size
-    
+
     class ClassViewHolder(private val binding: ItemsCourseBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(course: CourseEntity) {
             with(binding) {
                 tvCourseTitle.text = course.courseTitle
                 tvCourseTeacher.text = course.courseTeacher
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, CourseDetailActivity::class.java)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }
