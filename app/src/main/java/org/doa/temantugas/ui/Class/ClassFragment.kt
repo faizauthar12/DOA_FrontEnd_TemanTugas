@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import org.doa.temantugas.databinding.FragmentClassBinding
 
 class ClassFragment : Fragment() {
@@ -25,6 +27,21 @@ class ClassFragment : Fragment() {
         if (activity != null) {
             val searchView = binding.searchView
             searchView.isIconifiedByDefault = false
+
+            val viewModel = ViewModelProvider(
+                this,
+                ViewModelProvider.NewInstanceFactory()
+            )[ClassViewModel::class.java]
+            val courses = viewModel.getCourses()
+
+            val classAdapter = ClassAdapter()
+            classAdapter.setCourses(courses)
+
+            with(binding.rvCourse) {
+                layoutManager = LinearLayoutManager(context)
+                setHasFixedSize(true)
+                adapter = classAdapter
+            }
         }
     }
 }
