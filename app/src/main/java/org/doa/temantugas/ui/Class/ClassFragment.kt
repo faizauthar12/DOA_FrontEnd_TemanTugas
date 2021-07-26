@@ -1,21 +1,21 @@
-package org.doa.temantugas.ui.Home
+package org.doa.temantugas.ui.Class
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import org.doa.temantugas.databinding.FragmentHomeBinding
+import org.doa.temantugas.databinding.FragmentClassBinding
 
-class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
+class ClassFragment : Fragment() {
+    private lateinit var binding: FragmentClassBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        binding = FragmentClassBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 }
