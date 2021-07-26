@@ -18,4 +18,13 @@ class ClassFragment : Fragment() {
         binding = FragmentClassBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (activity != null) {
+            val searchView = binding.searchView
+            searchView.isIconifiedByDefault = false
+        }
+    }
 }
