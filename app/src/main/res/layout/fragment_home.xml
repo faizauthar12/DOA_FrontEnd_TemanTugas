@@ -4,4 +4,140 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Home.HomeFragment"/>
+    tools:context=".ui.Home.HomeFragment">
+
+    <View
+        android:id="@+id/viewHomeHeader"
+        android:layout_width="411dp"
+        android:layout_height="267dp"
+        android:background="@drawable/home_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_profile_home"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="Halo Manfred, "
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile_home" />
+
+    <TextView
+        android:id="@+id/tvGreetingHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teman Tugas siap menemani mu mengerjakan tugas"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_weekly_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGreetingHome">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_precentage_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Percentage title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_percentage_home"
+                android:layout_width="106dp"
+                android:layout_height="106dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_precentage_title"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_task_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/ic_dotted"
+                android:drawablePadding="5dp"
+                android:text="Tugas tersisa"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_percentage_home"
+                app:layout_constraintTop_toTopOf="@+id/iv_percentage_home" />
+
+            <TextView
+                android:id="@+id/tv_task_left_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="1 Tugas(25%)"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_task_left"
+                app:layout_constraintTop_toBottomOf="@+id/tv_task_left" />
+
+            <TextView
+                android:id="@+id/tv_task_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:drawableStart="@drawable/ic_dotted"
+                android:drawablePadding="5dp"
+                android:text="Tugas selesai"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_percentage_home"
+                app:layout_constraintTop_toBottomOf="@+id/tv_task_left_detail" />
+
+            <TextView
+                android:id="@+id/tv_task_done_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="3 Tugas(75%)"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_task_done"
+                app:layout_constraintTop_toBottomOf="@+id/tv_task_done" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
