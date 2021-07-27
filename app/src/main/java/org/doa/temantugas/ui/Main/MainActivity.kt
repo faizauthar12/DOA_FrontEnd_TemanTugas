@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupBottomNavigation()
+        supportActionBar?.hide()
     }
 
     private fun setupBottomNavigation() {
