@@ -51,9 +51,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_weekly_percentage"
-        android:layout_width="wrap_content"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="25dp"
         android:layout_marginTop="15dp"
         android:orientation="vertical"
         app:cardCornerRadius="10dp"
@@ -84,7 +83,7 @@
                 android:id="@+id/iv_percentage_home"
                 android:layout_width="106dp"
                 android:layout_height="106dp"
-                android:layout_marginStart="45dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_precentage_title"
