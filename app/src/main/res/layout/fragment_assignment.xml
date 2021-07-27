@@ -8,12 +8,28 @@
     tools:context=".ui.Assignment.AssignmentFragment">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_assignment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Assignment Fragment"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:drawablePadding="5dp"
+        android:text="Tugas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_dotted"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_assignment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_assignment"
+        tools:listitem="@layout/items_assignment" />
 </androidx.constraintlayout.widget.ConstraintLayout>
