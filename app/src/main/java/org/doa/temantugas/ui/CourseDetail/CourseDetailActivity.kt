@@ -13,6 +13,7 @@ class CourseDetailActivity : AppCompatActivity() {
         binding = ActivityCourseDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbarCourseDetail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
