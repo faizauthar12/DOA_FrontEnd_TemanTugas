@@ -40,6 +40,7 @@ class ClassAdapter : RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
                 tvCourseTeacher.text = course.courseTeacher
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, CourseDetailActivity::class.java)
+                    intent.putExtra(CourseDetailActivity.EXTRA_COURSE_TITLE, course.courseTitle)
                     itemView.context.startActivity(intent)
                 }
             }
